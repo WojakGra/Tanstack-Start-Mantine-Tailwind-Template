@@ -12,10 +12,10 @@ import {
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import * as React from 'react'
-import 'tailwind-preset-mantine'
 import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
 import { NotFound } from '~/components/NotFound'
 import { seo } from '~/utils/seo'
+import appCss from './app.css?url'
 
 const theme = createTheme({
 	/** Put your mantine theme override here */
@@ -56,6 +56,10 @@ export const Route = createRootRoute({
 			},
 			{ rel: 'manifest', href: '/site.webmanifest', color: '#fffff' },
 			{ rel: 'icon', href: '/favicon.ico' },
+			{
+				rel: 'stylesheet',
+				href: appCss,
+			},
 		],
 	}),
 	errorComponent: (props) => {
